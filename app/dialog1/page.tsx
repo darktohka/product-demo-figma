@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Product } from "./types/product";
-import { ProductCard } from "./components/ProductCard";
-import { ProductForm } from "./components/ProductForm";
-import { ProductDetails } from "./components/ProductDetails";
-import { DeleteConfirmDialog } from "./components/DeleteConfirmDialog";
-import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
+import { Product } from "../types/product";
+import { ProductCard } from "../components/ProductCard";
+import { ProductForm } from "../components/ProductForm";
+import { ProductDetails } from "../components/ProductDetails";
+import { DeleteConfirmDialog } from "../components/DeleteConfirmDialog";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import { Plus, Search } from "lucide-react";
 
 // Mock data for demonstration
@@ -68,7 +68,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Modal states
-  const [showAddForm, setShowAddForm] = useState(false);
+  const [showAddForm, setShowAddForm] = useState(true);
   const [showEditForm, setShowEditForm] = useState(false);
   const [showProductDetails, setShowProductDetails] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);

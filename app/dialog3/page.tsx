@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Product } from "./types/product";
-import { ProductCard } from "./components/ProductCard";
-import { ProductForm } from "./components/ProductForm";
-import { ProductDetails } from "./components/ProductDetails";
-import { DeleteConfirmDialog } from "./components/DeleteConfirmDialog";
-import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
+import { Product } from "../types/product";
+import { ProductCard } from "../components/ProductCard";
+import { ProductForm } from "../components/ProductForm";
+import { ProductDetails } from "../components/ProductDetails";
+import { DeleteConfirmDialog } from "../components/DeleteConfirmDialog";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import { Plus, Search } from "lucide-react";
 
 // Mock data for demonstration
@@ -70,11 +70,13 @@ export default function App() {
   // Modal states
   const [showAddForm, setShowAddForm] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
-  const [showProductDetails, setShowProductDetails] = useState(false);
+  const [showProductDetails, setShowProductDetails] = useState(true);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   // Selected items
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(
+    initialProducts[0]
+  );
   const [productToDelete, setProductToDelete] = useState<string>("");
 
   // Filter products based on search
